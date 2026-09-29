@@ -1,26 +1,108 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-ivory: #F7F3EA;
+  --color-forest: #173C35;
+  --color-forest-dark: #0F2722;
+  --color-terracotta: #B85C38;
+  --color-gold: #C49A5A;
+  --color-charcoal: #242522;
+  --color-charcoal-muted: #565851;
+  --color-sage: #A8B7A1;
+  --color-sage-light: #E4EBE0;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #F7F3EA;
+  color: #242522;
+  font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+}
+
+.font-serif {
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+/* Subtle Handcrafted Paper Grain Texture */
+.bg-paper-grain {
+  background-color: #F7F3EA;
+  background-image: 
+    radial-gradient(#173C35 0.65px, transparent 0.65px),
+    radial-gradient(#B85C38 0.5px, #F7F3EA 0.5px);
+  background-size: 28px 28px, 28px 28px;
+  background-position: 0 0, 14px 14px;
+  background-blend-mode: multiply;
+  opacity: 0.98;
+}
+
+/* Subtle Architectural Linework */
+.bg-architectural-grid {
+  background-image: 
+    linear-gradient(to right, rgba(23, 60, 53, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(23, 60, 53, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Editorial Paper Card Styling */
+.editorial-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(23, 60, 53, 0.12);
+  box-shadow: 0 4px 20px -4px rgba(23, 60, 53, 0.05), 0 2px 6px -1px rgba(23, 60, 53, 0.03);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorial-card:hover {
+  border-color: rgba(184, 92, 56, 0.4);
+  box-shadow: 0 12px 30px -6px rgba(23, 60, 53, 0.09), 0 4px 10px -2px rgba(184, 92, 56, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Editorial Tag & Pill */
+.editorial-pill {
+  background: #E8EFE5;
+  color: #173C35;
+  border: 1px solid rgba(23, 60, 53, 0.15);
+}
+
+/* Custom Editorial Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F3EA;
+}
+::-webkit-scrollbar-thumb {
+  background: #C9D4C4;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A8B7A1;
+}
+
+/* Elegant Rotating Animations */
+@keyframes delicate-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes reverse-delicate-spin {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-delicate-spin {
+  animation: delicate-spin 45s linear infinite;
+}
+
+.animate-reverse-delicate-spin {
+  animation: reverse-delicate-spin 35s linear infinite;
 }
