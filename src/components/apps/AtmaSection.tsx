@@ -169,32 +169,24 @@ export const AtmaSection: React.FC = () => {
 
             {/* Action Buttons */}
             <div className="pt-4 flex flex-wrap items-center gap-3">
+              <a
+                href="/atma"
+                className="px-6 py-3 rounded-xl font-semibold text-sm bg-[#050505] hover:bg-[#121212] text-[#D4AF37] border border-[#D4AF37]/50 shadow-md hover:shadow-[#D4AF37]/10 transition-all flex items-center gap-2 cursor-pointer group"
+              >
+                <span>Open ATMA Web App</span>
+                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+
               <button
                 onClick={() => {
                   playSound('atma');
                   setActiveAppModal(atmaApp);
                 }}
-                className="px-6 py-3 rounded-xl font-semibold text-sm bg-[#173C35] hover:bg-[#0F2722] text-[#F7F3EA] shadow-xs hover:shadow-md transition-all flex items-center gap-2 cursor-pointer"
+                className="px-6 py-3 rounded-xl font-semibold text-sm bg-transparent hover:bg-[#173C35]/5 text-[#173C35] border border-[#173C35]/30 transition-all flex items-center gap-2 cursor-pointer"
               >
                 <span>Explore ATMA Specs</span>
-                <ChevronRight className="w-4 h-4" />
+                <ExternalLink className="w-4 h-4" />
               </button>
-
-              {(atmaApp.appUrl || atmaApp.websiteUrl) ? (
-                <a
-                  href={atmaApp.appUrl || atmaApp.websiteUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-6 py-3 rounded-xl font-semibold text-sm bg-transparent hover:bg-[#173C35]/5 text-[#173C35] border border-[#173C35]/30 transition-all flex items-center gap-2"
-                >
-                  <span>Open App</span>
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-              ) : (
-                <span className="px-5 py-3 rounded-xl text-xs font-semibold text-[#565851] bg-[#FFFFFF] border border-[#173C35]/15 select-none">
-                  App Deployment Coming Soon
-                </span>
-              )}
             </div>
           </div>
 

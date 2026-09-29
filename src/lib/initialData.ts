@@ -11,75 +11,77 @@ export const INITIAL_APPS: OdiaApp[] = [
     longDescription: 'ATMA redefines how citizens and commuters traverse Odisha’s growing urban corridors. Powered by real-time telemetry, predictive route intelligence, and emergency civic assist, ATMA unifies multi-modal mobility across buses, shared transit, and local connectivity in a clean, high-speed experience.',
     logoBadge: 'ATMA',
     heroVisualType: '3d-phone-atma',
-    accentColor: '#173C35', // Deep Forest Green
-    secondaryColor: '#A8B7A1', // Soft Sage
-    glowColor: 'rgba(23, 60, 53, 0.15)',
-    status: 'in_development',
-    statusText: 'In Active Development',
-    technologies: ['Next.js', 'Flutter', 'WebSockets', 'GeoJSON', 'OpenStreetMap', 'PostGIS'],
-    culturalNote: 'Inspired by the precision wheel movements and navigation geometry of the Konark Sun Temple.',
+    accentColor: '#050505', // True Black Luxe
+    secondaryColor: '#D4AF37', // Royal Gold
+    glowColor: 'rgba(212, 175, 55, 0.2)',
+    status: 'live',
+    statusText: 'Live Platform',
+    websiteUrl: '/atma',
+    appUrl: '/atma',
+    technologies: ['React Native Web', 'Next.js', 'FastAPI', 'Expo Router', 'Python', 'TailwindCSS'],
+    culturalNote: 'Inspired by the sacred discipline and transformation wisdom of ancient Odishan philosophy and Stoic mastery.',
     highlights: [
-      'Live Fleet Telemetry & Transit ETA',
-      'Multi-Modal Route Optimization',
-      'Offline-First Micro-Schedules',
-      'Emergency SOS & Civic Alert Grid'
+      '21-Day Transformation Master Course',
+      'Daily Ritual Progress Ring & Streaks',
+      'Skool-Style Community Tribe & Feed',
+      'ATMA AI Transformation Coach'
     ],
     features: [
       {
         id: 'f1',
-        title: 'Predictive Transit Tracking',
-        description: 'Live GPS telemetry for local state and city transit with arrival forecasting accurate to within 30 seconds.',
-        iconName: 'Navigation',
-        highlight: 'Real-time Telemetry'
+        title: 'Daily Ritual Progress Ring',
+        description: 'Gamified circular habit tracker calculating daily momentum, XP milestones, and unbroken streak rewards.',
+        iconName: 'Activity',
+        highlight: 'Habit Mastery'
       },
       {
         id: 'f2',
-        title: 'Smart Civic Routing',
-        description: 'Dynamic alternative routing taking into account local festival congestions, weather conditions, and road repairs.',
-        iconName: 'Route',
-        highlight: 'Smart Engine'
+        title: '21-Day Transformation Path',
+        description: 'Structured daily curriculum with high-fidelity video wisdom transmissions, guided audio meditations, and reflection journals.',
+        iconName: 'Compass',
+        highlight: 'Curriculum'
       },
       {
         id: 'f3',
-        title: 'Bilingual Interface',
-        description: 'Full native support for Odia (ଓଡ଼ିଆ) and English with voice-guided accessibility prompts.',
-        iconName: 'Languages',
-        highlight: 'Native Odia Support'
+        title: 'The Tribe Community',
+        description: 'Clean peer accountability feed with post categories (Wins, Q&A, General), user level badges, and reflections.',
+        iconName: 'Users',
+        highlight: 'Peer Support'
       },
       {
         id: 'f4',
-        title: 'Emergency SOS Hub',
-        description: 'One-tap emergency beacon sharing your precise geolocation with verified community responders.',
-        iconName: 'ShieldAlert',
-        highlight: 'Safety First'
+        title: 'ATMA AI Coach',
+        description: '24/7 personal transformation coaching grounded in Stoic philosophy, conscious presence, and somatic awareness.',
+        iconName: 'Bot',
+        highlight: 'AI Guided'
       }
     ],
     screenshots: [
       {
         id: 's1',
-        title: 'Live Transit Radar',
-        caption: 'Visualizing active buses and transit routes across Bhubaneswar & Cuttack twin cities.',
-        tag: 'Navigation Radar',
-        accent: '#173C35'
+        title: 'Daily Sanctuary Dashboard',
+        caption: 'Circular progress ring and interactive daily rituals tracking physical and mental discipline.',
+        tag: 'Sanctuary',
+        accent: '#D4AF37'
       },
       {
         id: 's2',
-        title: 'Multi-Modal Route Planner',
-        caption: 'Instant comparison between Mo Bus, auto feeder routes, and walking pathways.',
-        tag: 'Route Intelligence',
-        accent: '#A8B7A1'
+        title: '21-Day Course Room',
+        caption: 'Cinematic video transmissions and guided audio meditations for deep personal mastery.',
+        tag: 'Wisdom Path',
+        accent: '#115E41'
       }
     ],
     metrics: [
-      { label: 'Telemetry Latency', value: '< 80ms', unit: 'ping' },
-      { label: 'Language', value: 'Odia + EN', unit: 'bilingual' },
-      { label: 'Status', value: 'Alpha Build', isComingSoon: false },
-      { label: 'Pilot Corridor', value: 'Bhubaneswar', isComingSoon: false }
+      { label: 'Pillars', value: '4 Core', unit: 'disciplines' },
+      { label: 'Course', value: '21 Days', unit: 'curriculum' },
+      { label: 'Status', value: 'Live', isComingSoon: false },
+      { label: 'Ecosystem', value: 'OdiaNXT', isComingSoon: false }
     ],
     order: 1,
     isActive: true,
-    launchDate: 'Q3 2026',
-    version: '0.9.2-dev'
+    launchDate: 'Live Now',
+    version: '1.4.0'
   },
   {
     id: 'mahalaxmi',

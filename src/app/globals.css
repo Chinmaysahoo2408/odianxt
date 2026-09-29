@@ -10,6 +10,20 @@
   --color-charcoal-muted: #565851;
   --color-sage: #A8B7A1;
   --color-sage-light: #E4EBE0;
+
+  /* ATMA Luxe Dark Tokens */
+  --atma-surface: #050505;
+  --atma-surface-secondary: #121212;
+  --atma-surface-tertiary: #1A1C1A;
+  --atma-surface-elevated: #1F1F1F;
+  --atma-gold: #D4AF37;
+  --atma-gold-glow: rgba(212, 175, 55, 0.25);
+  --atma-emerald: #115E41;
+  --atma-emerald-dark: #0A3B2C;
+  --atma-emerald-light: #2EA043;
+  --atma-border: #262626;
+  --atma-border-gold: rgba(212, 175, 55, 0.35);
+  --atma-divider: #1F1F1F;
 }
 
 body {
@@ -21,6 +35,37 @@ body {
 
 .font-serif {
   font-family: var(--font-serif), Georgia, serif;
+}
+
+.font-cormorant {
+  font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+}
+
+.font-geist {
+  font-family: var(--font-geist), "Geist", system-ui, sans-serif;
+}
+
+/* ATMA Glass and Glow Utilities */
+.atma-glass {
+  background: rgba(18, 18, 18, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.atma-card {
+  background: #121212;
+  border: 1px solid #262626;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.atma-card:hover {
+  border-color: rgba(212, 175, 55, 0.35);
+  box-shadow: 0 8px 30px -8px rgba(0, 0, 0, 0.7), 0 0 20px -5px rgba(212, 175, 55, 0.12);
+}
+
+.atma-gold-glow {
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
 }
 
 /* Subtle Handcrafted Paper Grain Texture */

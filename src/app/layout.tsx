@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { DM_Serif_Display, Manrope } from 'next/font/google';
+import { DM_Serif_Display, Manrope, Cormorant_Garamond, Geist } from 'next/font/google';
 import './globals.css';
 import { EcosystemProvider } from '@/lib/store';
 
@@ -13,6 +13,20 @@ const serif = DM_Serif_Display({
 const sans = Manrope({
   subsets: ['latin'],
   variable: '--font-sans',
+  display: 'swap',
+});
+
+const cormorant = Cormorant_Garamond({
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  subsets: ['latin'],
+  variable: '--font-cormorant',
+  display: 'swap',
+});
+
+const geist = Geist({
+  subsets: ['latin'],
+  variable: '--font-geist',
   display: 'swap',
 });
 
@@ -48,7 +62,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${serif.variable} ${sans.variable} scroll-smooth`}>
+    <html lang="en" className={`${serif.variable} ${sans.variable} ${cormorant.variable} ${geist.variable} scroll-smooth`}>
       <body className="min-h-screen bg-[#F7F3EA] text-[#242522] font-sans antialiased selection:bg-[#B85C38] selection:text-[#F7F3EA]">
         <EcosystemProvider>
           {children}
