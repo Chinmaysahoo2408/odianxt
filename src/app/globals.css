@@ -1,153 +1,151 @@
 @import "tailwindcss";
 
 :root {
-  --color-ivory: #F7F3EA;
-  --color-forest: #173C35;
-  --color-forest-dark: #0F2722;
-  --color-terracotta: #B85C38;
-  --color-gold: #C49A5A;
-  --color-charcoal: #242522;
-  --color-charcoal-muted: #565851;
-  --color-sage: #A8B7A1;
-  --color-sage-light: #E4EBE0;
-
-  /* ATMA Luxe Dark Tokens */
-  --atma-surface: #050505;
-  --atma-surface-secondary: #121212;
-  --atma-surface-tertiary: #1A1C1A;
-  --atma-surface-elevated: #1F1F1F;
-  --atma-gold: #D4AF37;
-  --atma-gold-glow: rgba(212, 175, 55, 0.25);
-  --atma-emerald: #115E41;
-  --atma-emerald-dark: #0A3B2C;
-  --atma-emerald-light: #2EA043;
-  --atma-border: #262626;
-  --atma-border-gold: rgba(212, 175, 55, 0.35);
-  --atma-divider: #1F1F1F;
+  /* HuesPost Signature Palette */
+  --bg-obsidian: #09090b;
+  --bg-surface: #0d0d11;
+  --bg-card: #111114;
+  --bg-card-elevated: #18181c;
+  
+  --hues-coral: #ff6b4a;
+  --hues-coral-hover: #ff8a6d;
+  --hues-coral-glow: rgba(255, 107, 74, 0.35);
+  --hues-ember: #8b1e05;
+  
+  --hues-amber: #f59e0b;
+  --hues-cyan: #06b6d4;
+  --hues-purple: #a855f7;
+  --hues-teal: #14b8a6;
+  
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.2);
+  --border-coral: rgba(255, 107, 74, 0.4);
 }
 
 body {
-  background-color: #F7F3EA;
-  color: #242522;
+  background-color: #09090b;
+  color: #f4f4f5;
   font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   overflow-x: hidden;
 }
 
-.font-serif {
-  font-family: var(--font-serif), Georgia, serif;
+/* HuesPost Fiery Ambient Ember Glow */
+.hues-ember-radial {
+  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(139, 30, 5, 0.4) 0%, rgba(32, 7, 3, 0.15) 50%, rgba(9, 9, 11, 0) 100%);
 }
 
-.font-cormorant {
-  font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+.hues-bottom-ember {
+  background: radial-gradient(ellipse 60% 40% at 50% 120%, rgba(255, 107, 74, 0.15) 0%, rgba(9, 9, 11, 0) 80%);
 }
 
-.font-geist {
-  font-family: var(--font-geist), "Geist", system-ui, sans-serif;
-}
-
-/* ATMA Glass and Glow Utilities */
-.atma-glass {
-  background: rgba(18, 18, 18, 0.85);
+/* HuesPost Glassmorphic Container */
+.hues-glass {
+  background: rgba(17, 17, 20, 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.atma-card {
-  background: #121212;
-  border: 1px solid #262626;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+.hues-glass-active {
+  background: rgba(24, 24, 28, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 107, 74, 0.35);
+  box-shadow: 0 0 30px rgba(255, 107, 74, 0.15);
 }
 
-.atma-card:hover {
-  border-color: rgba(212, 175, 55, 0.35);
-  box-shadow: 0 8px 30px -8px rgba(0, 0, 0, 0.7), 0 0 20px -5px rgba(212, 175, 55, 0.12);
-}
-
-.atma-gold-glow {
-  box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
-}
-
-/* Subtle Handcrafted Paper Grain Texture */
-.bg-paper-grain {
-  background-color: #F7F3EA;
-  background-image: 
-    radial-gradient(#173C35 0.65px, transparent 0.65px),
-    radial-gradient(#B85C38 0.5px, #F7F3EA 0.5px);
-  background-size: 28px 28px, 28px 28px;
-  background-position: 0 0, 14px 14px;
-  background-blend-mode: multiply;
-  opacity: 0.98;
-}
-
-/* Subtle Architectural Linework */
-.bg-architectural-grid {
-  background-image: 
-    linear-gradient(to right, rgba(23, 60, 53, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(23, 60, 53, 0.04) 1px, transparent 1px);
-  background-size: 40px 40px;
-}
-
-/* Editorial Paper Card Styling */
-.editorial-card {
-  background: #FFFFFF;
-  border: 1px solid rgba(23, 60, 53, 0.12);
-  box-shadow: 0 4px 20px -4px rgba(23, 60, 53, 0.05), 0 2px 6px -1px rgba(23, 60, 53, 0.03);
+/* HuesPost Card Styling */
+.hues-card {
+  background: #111114;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.editorial-card:hover {
-  border-color: rgba(184, 92, 56, 0.4);
-  box-shadow: 0 12px 30px -6px rgba(23, 60, 53, 0.09), 0 4px 10px -2px rgba(184, 92, 56, 0.08);
+.hues-card:hover {
+  border-color: rgba(255, 107, 74, 0.45);
   transform: translateY(-2px);
+  box-shadow: 0 12px 35px -8px rgba(0, 0, 0, 0.8), 0 0 30px -5px rgba(255, 107, 74, 0.2);
 }
 
-/* Editorial Tag & Pill */
-.editorial-pill {
-  background: #E8EFE5;
-  color: #173C35;
-  border: 1px solid rgba(23, 60, 53, 0.15);
+/* HuesPost Buttons */
+.hues-btn-primary {
+  background-color: #ff6b4a;
+  color: #ffffff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.8125rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 0 24px rgba(255, 107, 74, 0.35);
 }
 
-/* Custom Editorial Scrollbar */
+.hues-btn-primary:hover {
+  background-color: #ff8a6d;
+  box-shadow: 0 0 35px rgba(255, 107, 74, 0.55);
+  transform: translateY(-1px);
+}
+
+.hues-btn-ghost {
+  background: rgba(255, 255, 255, 0.03);
+  color: #ffffff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.8125rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.2s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.hues-btn-ghost:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-1px);
+}
+
+/* Eyebrow Label */
+.hues-eyebrow {
+  color: #ff6b4a;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Subtle Film Grain Effect */
+.bg-film-grain {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Custom Hues Dark Scrollbar */
 ::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #F7F3EA;
+  background: #09090b;
 }
 ::-webkit-scrollbar-thumb {
-  background: #C9D4C4;
-  border-radius: 4px;
+  background: #27272a;
+  border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #A8B7A1;
+  background: #ff6b4a;
 }
 
-/* Elegant Rotating Animations */
-@keyframes delicate-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes reverse-delicate-spin {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
-}
-
-.animate-delicate-spin {
-  animation: delicate-spin 45s linear infinite;
-}
-
-.animate-reverse-delicate-spin {
-  animation: reverse-delicate-spin 35s linear infinite;
-}

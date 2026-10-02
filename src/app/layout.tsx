@@ -1,58 +1,49 @@
 import type { Metadata } from 'next';
-import { DM_Serif_Display, Manrope, Cormorant_Garamond, Geist } from 'next/font/google';
+import { Plus_Jakarta_Sans, Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import { EcosystemProvider } from '@/lib/store';
 
-const serif = DM_Serif_Display({
-  weight: ['400'],
-  subsets: ['latin'],
-  variable: '--font-serif',
-  display: 'swap',
-});
-
-const sans = Manrope({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
   variable: '--font-sans',
   display: 'swap',
 });
 
-const cormorant = Cormorant_Garamond({
-  weight: ['400', '500', '600', '700'],
-  style: ['normal', 'italic'],
+const space = Space_Grotesk({
   subsets: ['latin'],
-  variable: '--font-cormorant',
+  variable: '--font-display',
   display: 'swap',
 });
 
-const geist = Geist({
+const inter = Inter({
   subsets: ['latin'],
-  variable: '--font-geist',
+  variable: '--font-body',
   display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: 'OdiaNXT — Building the Next Digital Odisha',
+  title: 'ODIANXT — Digital Ecosystem Studio | Post-Grade Next-Gen Platforms',
   description:
-    'One connected digital ecosystem uniting mobility (ATMA), genuine automotive spares (MAHALAXMI), companion animal care (PET APP), and sacred temple heritage (TEMPLE APP) across Odisha.',
+    'Where technology and heritage become unforgettable. One connected studio ecosystem uniting urban mobility (ATMA), automotive commerce (MAHALAXMI), animal welfare (PET APP), and sacred temple culture (TEMPLE APP).',
   keywords: [
     'OdiaNXT',
+    'HuesPost Style Ecosystem',
     'Digital Odisha',
-    'Odisha Technology Ecosystem',
     'ATMA Mobility',
     'Mahalaxmi Genuine Spares',
     'Pet App Odisha',
     'Temple App Odisha',
     'Bhubaneswar Startup',
-    'Indian Tech Craftsmanship'
+    'Next-Gen Tech Studio'
   ],
-  authors: [{ name: 'OdiaNXT Ecosystem' }],
+  authors: [{ name: 'OdiaNXT Studio' }],
   creator: 'OdiaNXT',
   openGraph: {
-    title: 'OdiaNXT — Building the Next Digital Odisha',
-    description: 'One ecosystem connecting technology, mobility, commerce, pets, culture and everyday life.',
+    title: 'ODIANXT — Digital Ecosystem Studio',
+    description: 'Where technology and heritage become unforgettable. Urban mobility, parts commerce, pet welfare and temple heritage.',
     type: 'website',
     locale: 'en_IN',
-    siteName: 'OdiaNXT Ecosystem',
+    siteName: 'ODIANXT Ecosystem Studio',
   },
 };
 
@@ -62,8 +53,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${serif.variable} ${sans.variable} ${cormorant.variable} ${geist.variable} scroll-smooth`}>
-      <body className="min-h-screen bg-[#F7F3EA] text-[#242522] font-sans antialiased selection:bg-[#B85C38] selection:text-[#F7F3EA]">
+    <html lang="en" className={`${jakarta.variable} ${space.variable} ${inter.variable} dark scroll-smooth`}>
+      <body className="min-h-screen bg-[#09090b] text-[#f4f4f5] font-sans antialiased selection:bg-[#ff6b4a] selection:text-white bg-film-grain">
         <EcosystemProvider>
           {children}
         </EcosystemProvider>
@@ -71,3 +62,4 @@ export default function RootLayout({
     </html>
   );
 }
+

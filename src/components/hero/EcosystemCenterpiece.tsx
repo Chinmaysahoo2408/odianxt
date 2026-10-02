@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import { useEcosystem } from '@/lib/store';
 import { OdiaApp } from '@/lib/types';
-import { KonarkChakra } from '../ui/KonarkChakra';
 import {
   Navigation,
   Wrench,
@@ -11,10 +10,7 @@ import {
   Building2,
   Layers,
   ArrowUpRight,
-  Route,
-  Cog,
-  PawPrint,
-  Compass
+  Sparkles
 } from 'lucide-react';
 
 export const EcosystemCenterpiece: React.FC = () => {
@@ -23,21 +19,35 @@ export const EcosystemCenterpiece: React.FC = () => {
 
   const displayedApps = apps.filter(a => a.isActive);
   const totalNodes = displayedApps.length;
-
   const hoveredApp = displayedApps.find(a => a.id === hoveredAppId);
 
   const getAppIcon = (slug: string) => {
     switch (slug) {
       case 'atma':
-        return <Navigation className="w-5 h-5 text-[#173C35]" />;
+        return <Navigation className="w-5 h-5 text-[#ff6b4a]" />;
       case 'mahalaxmi':
-        return <Wrench className="w-5 h-5 text-[#B85C38]" />;
+        return <Wrench className="w-5 h-5 text-[#06b6d4]" />;
       case 'pet-app':
-        return <HeartPulse className="w-5 h-5 text-[#173C35]" />;
+        return <HeartPulse className="w-5 h-5 text-[#14b8a6]" />;
       case 'temple-app':
-        return <Building2 className="w-5 h-5 text-[#C49A5A]" />;
+        return <Building2 className="w-5 h-5 text-[#f59e0b]" />;
       default:
-        return <Layers className="w-5 h-5 text-[#173C35]" />;
+        return <Layers className="w-5 h-5 text-[#ff6b4a]" />;
+    }
+  };
+
+  const getNodeGlow = (slug: string) => {
+    switch (slug) {
+      case 'atma':
+        return 'border-[#ff6b4a]/60 shadow-[0_0_25px_rgba(255,107,74,0.35)]';
+      case 'mahalaxmi':
+        return 'border-[#06b6d4]/60 shadow-[0_0_25px_rgba(6,182,212,0.35)]';
+      case 'pet-app':
+        return 'border-[#14b8a6]/60 shadow-[0_0_25px_rgba(20,184,166,0.35)]';
+      case 'temple-app':
+        return 'border-[#f59e0b]/60 shadow-[0_0_25px_rgba(245,158,11,0.35)]';
+      default:
+        return 'border-white/40 shadow-[0_0_20px_rgba(255,255,255,0.2)]';
     }
   };
 
@@ -62,37 +72,37 @@ export const EcosystemCenterpiece: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full max-w-[620px] h-[480px] sm:h-[540px] mx-auto flex items-center justify-center select-none">
-      {/* Background Architectural Geometry & Orbit Linework */}
+    <div className="relative w-full max-w-[620px] h-[440px] sm:h-[480px] mx-auto flex items-center justify-center select-none">
+      {/* Background Studio Orbital Rings */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        {/* Outer Architectural Dashed Ring */}
-        <div className="w-[400px] sm:w-[460px] h-[400px] sm:h-[460px] rounded-full border border-[#173C35]/12 border-dashed animate-delicate-spin" />
+        {/* Outer Ring */}
+        <div className="w-[380px] sm:w-[440px] h-[380px] sm:h-[440px] rounded-full border border-white/10 border-dashed animate-spin [animation-duration:60s]" />
         
-        {/* Mid Ring */}
-        <div className="absolute w-[290px] sm:w-[330px] h-[290px] sm:h-[330px] rounded-full border border-[#B85C38]/15 animate-reverse-delicate-spin" />
+        {/* Mid Ring with Coral Ember Gradient */}
+        <div className="absolute w-[280px] sm:w-[320px] h-[280px] sm:h-[320px] rounded-full border border-[#ff6b4a]/20 animate-spin [animation-duration:40s] [animation-direction:reverse]" />
         
-        {/* Inner Subtle Tint */}
+        {/* Ambient Center Glow */}
         <div
-          className="absolute w-[200px] h-[200px] rounded-full transition-all duration-700 pointer-events-none"
+          className="absolute w-[220px] h-[220px] rounded-full transition-all duration-700 pointer-events-none blur-2xl"
           style={{
             backgroundColor: hoveredApp
               ? hoveredApp.slug === 'atma'
-                ? 'rgba(168, 183, 161, 0.25)' // Sage
+                ? 'rgba(255, 107, 74, 0.2)'
                 : hoveredApp.slug === 'mahalaxmi'
-                ? 'rgba(184, 92, 56, 0.12)' // Terracotta
+                ? 'rgba(6, 182, 212, 0.2)'
                 : hoveredApp.slug === 'pet-app'
-                ? 'rgba(168, 183, 161, 0.22)' // Soft Sage
-                : 'rgba(196, 154, 90, 0.18)' // Muted Gold
-              : 'rgba(23, 60, 53, 0.04)',
+                ? 'rgba(20, 184, 166, 0.2)'
+                : 'rgba(245, 158, 11, 0.2)'
+              : 'rgba(255, 107, 74, 0.08)',
           }}
         />
       </div>
 
-      {/* SVG Living Network Connecting Lines */}
+      {/* SVG Connecting Beams */}
       <svg className="absolute inset-0 w-full h-full pointer-events-none z-10" viewBox="0 0 600 600">
         {displayedApps.map((app, index) => {
           const angle = (index * 2 * Math.PI) / totalNodes - Math.PI / 2;
-          const radius = 185;
+          const radius = 175;
           const centerX = 300;
           const centerY = 300;
           const nodeX = centerX + radius * Math.cos(angle);
@@ -100,15 +110,16 @@ export const EcosystemCenterpiece: React.FC = () => {
           const isHovered = hoveredAppId === app.id;
 
           const lineColor =
-            app.slug === 'mahalaxmi'
-              ? '#B85C38'
-              : app.slug === 'temple-app'
-              ? '#C49A5A'
-              : '#173C35';
+            app.slug === 'atma'
+              ? '#ff6b4a'
+              : app.slug === 'mahalaxmi'
+              ? '#06b6d4'
+              : app.slug === 'pet-app'
+              ? '#14b8a6'
+              : '#f59e0b';
 
           return (
             <g key={`beam-${app.id}`}>
-              {/* Architectural Living Connection Line */}
               <line
                 x1={centerX}
                 y1={centerY}
@@ -116,18 +127,16 @@ export const EcosystemCenterpiece: React.FC = () => {
                 y2={nodeY}
                 stroke={lineColor}
                 strokeWidth={isHovered ? '2' : '1'}
-                strokeOpacity={isHovered ? 0.8 : 0.3}
-                strokeDasharray={isHovered ? 'none' : '4 3'}
+                strokeOpacity={isHovered ? 0.9 : 0.25}
+                strokeDasharray={isHovered ? 'none' : '4 4'}
                 className="transition-all duration-300"
               />
-              
-              {/* Subtle Connection Midpoint Dot */}
               <circle
                 cx={(centerX + nodeX) / 2}
                 cy={(centerY + nodeY) / 2}
                 r={isHovered ? '3' : '2'}
                 fill={lineColor}
-                opacity={isHovered ? 0.9 : 0.5}
+                opacity={isHovered ? 1 : 0.4}
                 className="transition-all duration-300"
               />
             </g>
@@ -135,7 +144,7 @@ export const EcosystemCenterpiece: React.FC = () => {
         })}
       </svg>
 
-      {/* Central OdiaNXT Living Hub */}
+      {/* Central OdiaNXT Studio Core */}
       <div
         className="relative z-20 flex flex-col items-center justify-center group cursor-pointer"
         onClick={() => {
@@ -144,30 +153,30 @@ export const EcosystemCenterpiece: React.FC = () => {
           if (eco) eco.scrollIntoView({ behavior: 'smooth' });
         }}
       >
-        <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-[#FFFFFF] border-2 border-[#173C35]/30 flex items-center justify-center shadow-md group-hover:border-[#173C35] group-hover:scale-102 transition-all duration-300">
-          <KonarkChakra size={84} accentColor="#173C35" animate />
-          
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-            <span className="text-xs sm:text-sm font-serif font-bold tracking-tight text-[#173C35]">
-              OdiaNXT
-            </span>
-            <span className="text-[8px] font-mono font-semibold uppercase tracking-wider text-[#B85C38]">
-              ECOSYSTEM
-            </span>
+        <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-2xl bg-[#111114] border border-white/20 flex flex-col items-center justify-center shadow-2xl group-hover:border-[#ff6b4a] group-hover:shadow-[0_0_35px_rgba(255,107,74,0.35)] transition-all duration-300">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#ff6b4a] to-[#f59e0b] flex items-center justify-center mb-1 shadow-md">
+            <span className="text-white font-black text-xs tracking-wider">OX</span>
           </div>
+          
+          <span className="text-xs font-black tracking-[0.16em] uppercase text-white">
+            ODIANXT
+          </span>
+          <span className="text-[8px] font-mono font-bold uppercase tracking-widest text-[#ff6b4a]">
+            CORE ENGINE
+          </span>
         </div>
 
-        {/* Central Badge */}
-        <div className="mt-3 px-3 py-1 rounded-full bg-[#FFFFFF] border border-[#173C35]/15 text-[10px] font-mono text-[#173C35] flex items-center gap-1.5 shadow-2xs">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#B85C38]" />
-          <span>{apps.length} Living Network Nodes</span>
+        {/* Central Pulse Pill */}
+        <div className="mt-3 px-3 py-1 rounded-full bg-[#111114] border border-white/10 text-[10px] font-mono uppercase tracking-wider text-stone-300 flex items-center gap-1.5 shadow-lg">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#ff6b4a] animate-pulse" />
+          <span>{apps.length} STUDIO NODES LIVE</span>
         </div>
       </div>
 
       {/* Orbiting Application Nodes */}
       {displayedApps.map((app, index) => {
         const angle = (index * 2 * Math.PI) / totalNodes - Math.PI / 2;
-        const radius = 185;
+        const radius = 175;
         const x = radius * Math.cos(angle);
         const y = radius * Math.sin(angle);
         const isHovered = hoveredAppId === app.id;
@@ -179,20 +188,10 @@ export const EcosystemCenterpiece: React.FC = () => {
               transform: `translate(${x}px, ${y}px)`,
               transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
             }}
-            className={`absolute z-30 ${isHovered ? 'z-40 scale-108' : 'hover:scale-104'}`}
+            className={`absolute z-30 ${isHovered ? 'z-40 scale-110' : 'hover:scale-105'}`}
             onMouseEnter={() => {
               setHoveredAppId(app.id);
-              playSound(
-                app.slug === 'atma'
-                  ? 'atma'
-                  : app.slug === 'mahalaxmi'
-                  ? 'mahalaxmi'
-                  : app.slug === 'pet-app'
-                  ? 'pet'
-                  : app.slug === 'temple-app'
-                  ? 'temple'
-                  : 'hover'
-              );
+              playSound('hover');
             }}
             onMouseLeave={() => setHoveredAppId(null)}
             onClick={() => handleNodeClick(app)}
@@ -200,10 +199,10 @@ export const EcosystemCenterpiece: React.FC = () => {
             <div className="relative flex flex-col items-center cursor-pointer transition-all duration-300">
               {/* Node Icon Box */}
               <div
-                className={`w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center transition-all duration-300 border shadow-sm ${
+                className={`w-13 h-13 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center transition-all duration-300 border bg-[#111114] ${
                   isHovered
-                    ? 'bg-[#FFFFFF] border-[#173C35] shadow-md -translate-y-1'
-                    : 'bg-[#FFFFFF] border-[#173C35]/15 hover:border-[#173C35]/40'
+                    ? getNodeGlow(app.slug)
+                    : 'border-white/10 hover:border-white/30 shadow-lg'
                 }`}
               >
                 {getAppIcon(app.slug)}
@@ -211,36 +210,36 @@ export const EcosystemCenterpiece: React.FC = () => {
 
               {/* Node Label Below */}
               <div
-                className={`mt-2 px-2.5 py-1 rounded-lg text-center transition-all duration-200 border whitespace-nowrap ${
+                className={`mt-2 px-2.5 py-0.5 rounded-md text-center transition-all duration-200 border whitespace-nowrap ${
                   isHovered
-                    ? 'bg-[#173C35] text-[#F7F3EA] font-bold border-[#173C35] shadow-xs'
-                    : 'bg-[#FFFFFF] text-[#242522] font-semibold border-[#173C35]/12 text-xs'
+                    ? 'bg-[#ff6b4a] text-white font-bold border-[#ff6b4a] shadow-lg text-[10px]'
+                    : 'bg-[#111114]/90 text-stone-300 font-semibold border-white/10 text-[10px] uppercase tracking-wider'
                 }`}
               >
                 <div className="flex items-center gap-1">
-                  <span className="text-xs">{app.name}</span>
-                  {isHovered && <ArrowUpRight className="w-3 h-3 text-[#B85C38]" />}
+                  <span>{app.name}</span>
+                  {isHovered && <ArrowUpRight className="w-2.5 h-2.5 text-white" />}
                 </div>
               </div>
 
-              {/* Editorial Information Tooltip on Hover */}
+              {/* Studio Info Tooltip on Hover */}
               {isHovered && (
-                <div className="absolute bottom-full mb-3 w-60 p-3.5 rounded-2xl bg-[#FFFFFF] border border-[#173C35]/20 shadow-xl pointer-events-none animate-in fade-in zoom-in-95 duration-150 z-50 text-left">
+                <div className="absolute bottom-full mb-3 w-64 p-3.5 rounded-xl bg-[#111114]/95 border border-white/15 backdrop-blur-xl shadow-2xl pointer-events-none animate-in fade-in zoom-in-95 duration-150 z-50 text-left">
                   <div className="flex items-center justify-between gap-1 mb-1.5">
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-[#565851]">
+                    <span className="text-[10px] font-bold tracking-[0.16em] uppercase text-[#ff6b4a]">
                       {app.category}
                     </span>
-                    <span className="text-[9px] px-1.5 py-0.5 rounded font-bold uppercase bg-[#173C35]/10 text-[#173C35]">
+                    <span className="text-[9px] px-1.5 py-0.5 rounded font-mono font-bold uppercase bg-white/10 text-stone-300">
                       {app.status.replace('_', ' ')}
                     </span>
                   </div>
 
-                  <p className="text-xs text-[#242522] leading-relaxed font-normal">
+                  <p className="text-xs text-stone-300 leading-relaxed font-normal">
                     {app.tagline}
                   </p>
 
-                  <div className="mt-2.5 pt-2 border-t border-[#173C35]/10 flex items-center justify-between text-[10px] text-[#B85C38] font-semibold">
-                    <span>Click to explore module</span>
+                  <div className="mt-2.5 pt-2 border-t border-white/10 flex items-center justify-between text-[10px] text-[#ff6b4a] font-bold uppercase tracking-wider">
+                    <span>Explore Module</span>
                     <span>→</span>
                   </div>
                 </div>
@@ -252,3 +251,4 @@ export const EcosystemCenterpiece: React.FC = () => {
     </div>
   );
 };
+
