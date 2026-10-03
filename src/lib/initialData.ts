@@ -301,6 +301,81 @@ export const INITIAL_APPS: OdiaApp[] = [
     isActive: true,
     launchDate: 'Q4 2026',
     version: '0.8.2-dev'
+  },
+  {
+    id: 'iraya',
+    name: 'IRAYA',
+    slug: 'iraya',
+    tagline: 'A House of Handcrafted Bags & Footwear — Made in India',
+    category: 'Luxury Fashion & Crafts',
+    description: 'A contemporary luxury house of handcrafted bags and footwear, engineered with sustainable vegan materials, bespoke craftsmanship, and timeless intentional design.',
+    longDescription: 'IRAYA is a modern artisanal luxury house celebrating authentic Indian leathercraft and cruelty-free innovation. Each piece is meticulously handcrafted by master artisans, combining ergonomic footwear engineering, structured silhouettes, and minimal aesthetics designed for global lifestyles.',
+    logoBadge: 'HANDCRAFTED LUXURY',
+    heroVisualType: '3d-iraya-craft',
+    accentColor: '#10B981', // Emerald Luxe
+    secondaryColor: '#D4AF37', // Gold Leaf
+    glowColor: 'rgba(16, 185, 129, 0.25)',
+    status: 'live',
+    statusText: 'Live Store',
+    websiteUrl: 'https://irayaglobal.vercel.app',
+    appUrl: 'https://irayaglobal.vercel.app',
+    technologies: ['TanStack Start', 'React 19', 'Supabase', 'Tailwind CSS', 'Vercel Edge', 'Vite'],
+    culturalNote: 'Honoring India’s timeless legacy of master handloom and leather craftsmanship, reimagined with sustainable modern luxury.',
+    highlights: [
+      'Handcrafted Artisanal Vegan Leathers',
+      'Ergonomic Intentional Footwear Design',
+      'Direct-to-Consumer Global Atelier',
+      'Seamless Instant Cart & Checkout Engine'
+    ],
+    features: [
+      {
+        id: 'if1',
+        title: 'Artisanal Handcrafting',
+        description: 'Master artisan crafted bags and footwear with hand-stitched edges and premium cruelty-free materials.',
+        iconName: 'Sparkles',
+        highlight: '100% Handcrafted'
+      },
+      {
+        id: 'if2',
+        title: 'Intentional Footwear Ergonomics',
+        description: 'Orthopedically balanced soles engineered for cloud-soft stride and all-day urban comfort.',
+        iconName: 'Footprints',
+        highlight: 'Ergonomic'
+      },
+      {
+        id: 'if3',
+        title: 'Curated Capsule Collections',
+        description: 'Limited-edition seasonal releases featuring luxury totes, crossbodies, mules, and everyday slip-ons.',
+        iconName: 'ShoppingBag',
+        highlight: 'Limited Drops'
+      },
+      {
+        id: 'if4',
+        title: 'Instant Global Dispatch',
+        description: 'Secure digital checkout with live package tracking and express doorstep delivery.',
+        iconName: 'Truck',
+        highlight: 'Global Shipping'
+      }
+    ],
+    screenshots: [
+      {
+        id: 'is1',
+        title: 'Artisan Collection Showcase',
+        caption: 'Explore handcrafted bags and footwear designed with timeless minimalist aesthetics.',
+        tag: 'Atelier Drops',
+        accent: '#10B981'
+      }
+    ],
+    metrics: [
+      { label: 'Craft Standard', value: '100% Handcrafted', unit: 'Artisan' },
+      { label: 'Ecosystem', value: 'Live on Vercel', isComingSoon: false },
+      { label: 'Status', value: 'Live Store', isComingSoon: false },
+      { label: 'Platform', value: 'IRAYA Global', isComingSoon: false }
+    ],
+    order: 5,
+    isActive: true,
+    launchDate: 'Live Now',
+    version: '1.0.0-live'
   }
 ];
 
@@ -312,10 +387,10 @@ export const INITIAL_LOCATIONS: LocationNode[] = [
     district: 'Khurda',
     region: 'Coastal Odisha',
     coordinates: { x: 62, y: 56 },
-    activeApps: ['atma', 'temple-app', 'pet-app', 'mahalaxmi'],
-    description: 'Central OdiaNXT Innovation Core. Active deployment corridor for ATMA transit and Temple App architectural documentation.',
+    activeApps: ['atma', 'temple-app', 'pet-app', 'mahalaxmi', 'iraya'],
+    description: 'Central OdiaNXT Innovation Core. Active deployment corridor for ATMA transit, Temple App architectural documentation, and IRAYA global design atelier.',
     status: 'Active Hub',
-    initiativesCount: 4
+    initiativesCount: 5
   },
   {
     id: 'cuttack',
@@ -324,10 +399,10 @@ export const INITIAL_LOCATIONS: LocationNode[] = [
     district: 'Cuttack',
     region: 'Coastal Odisha',
     coordinates: { x: 64, y: 52 },
-    activeApps: ['atma', 'mahalaxmi', 'temple-app'],
-    description: 'Historic Millennium City corridor. Automotive spare hubs for MAHALAXMI and twin-city transit telemetry with ATMA.',
+    activeApps: ['atma', 'mahalaxmi', 'temple-app', 'iraya'],
+    description: 'Historic Millennium City corridor. Automotive spare hubs for MAHALAXMI, master leather artisans for IRAYA, and twin-city transit telemetry with ATMA.',
     status: 'Active Hub',
-    initiativesCount: 3
+    initiativesCount: 4
   },
   {
     id: 'puri',
@@ -360,10 +435,10 @@ export const INITIAL_LOCATIONS: LocationNode[] = [
     district: 'Sambalpur',
     region: 'Western Odisha',
     coordinates: { x: 30, y: 40 },
-    activeApps: ['temple-app', 'mahalaxmi', 'pet-app'],
-    description: 'Western Odisha cultural and logistics node. Samaleswari temple heritage archival and regional transport link.',
+    activeApps: ['temple-app', 'mahalaxmi', 'pet-app', 'iraya'],
+    description: 'Western Odisha cultural and logistics node. Master handloom textile networks for IRAYA and Samaleswari heritage archival.',
     status: 'Pilot Deployment',
-    initiativesCount: 3
+    initiativesCount: 4
   },
   {
     id: 'berhampur',
@@ -404,23 +479,31 @@ export const INITIAL_LOCATIONS: LocationNode[] = [
 ];
 
 export const INITIAL_METRICS: EcosystemMetrics = {
-  totalApps: 4,
-  activeProjects: 12,
+  totalApps: 5,
+  activeProjects: 15,
   districtsCovered: '30 Districts in Roadmap',
   registeredUsers: 'Private Beta (Invite-Only)',
-  activeServices: '18 Core Service Modules',
+  activeServices: '22 Core Service Modules',
   platformUptime: '99.98%',
   systemStatus: 'Optimal',
-  lastUpdated: 'September 2026'
+  lastUpdated: 'October 2026'
 };
 
 export const INITIAL_ANNOUNCEMENTS: EcosystemAnnouncement[] = [
+  {
+    id: 'ann-0',
+    title: 'IRAYA Global Flagship Live Deployment',
+    date: 'Oct 2026',
+    category: 'Launch',
+    summary: 'IRAYA Handcrafted Bags & Footwear atelier launched on Vercel at irayaglobal.vercel.app with instant digital checkout.',
+    appSlug: 'iraya'
+  },
   {
     id: 'ann-1',
     title: 'OdiaNXT Architecture 2.0 Released',
     date: 'Sep 2026',
     category: 'Architecture',
-    summary: 'Centralized dynamic application schema launched, enabling effortless expansion from 4 apps to 50+ without redesign.'
+    summary: 'Centralized dynamic application schema launched, enabling effortless expansion across 5 flagships and 50+ modules.'
   },
   {
     id: 'ann-2',

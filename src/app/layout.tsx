@@ -24,13 +24,14 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'ODIANXT — Digital Ecosystem Studio | Post-Grade Next-Gen Platforms',
   description:
-    'Where technology and heritage become unforgettable. One connected studio ecosystem uniting urban mobility (ATMA), automotive commerce (MAHALAXMI), animal welfare (PET APP), and sacred temple culture (TEMPLE APP).',
+    'Where technology and heritage become unforgettable. One connected studio ecosystem uniting urban mobility (ATMA), automotive commerce (MAHALAXMI), handcrafted luxury fashion (IRAYA), animal welfare (PET APP), and sacred temple culture (TEMPLE APP).',
   keywords: [
     'OdiaNXT',
     'HuesPost Style Ecosystem',
     'Digital Odisha',
     'ATMA Mobility',
     'Mahalaxmi Genuine Spares',
+    'IRAYA Handcrafted Bags & Footwear',
     'Pet App Odisha',
     'Temple App Odisha',
     'Bhubaneswar Startup',
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
   creator: 'OdiaNXT',
   openGraph: {
     title: 'ODIANXT — Digital Ecosystem Studio',
-    description: 'Where technology and heritage become unforgettable. Urban mobility, parts commerce, pet welfare and temple heritage.',
+    description: 'Where technology and heritage become unforgettable. Urban mobility, parts commerce, luxury fashion crafts, pet welfare and temple heritage.',
     type: 'website',
     locale: 'en_IN',
     siteName: 'ODIANXT Ecosystem Studio',

@@ -9,6 +9,7 @@ import {
   Wrench,
   HeartPulse,
   Building2,
+  ShoppingBag,
   Layers,
   ArrowRight,
   ExternalLink,
@@ -58,6 +59,14 @@ export const AppCard: React.FC<AppCardProps> = ({ app, index }) => {
           accent: '#f59e0b',
           badgeBg: 'bg-[#f59e0b]/15 text-[#f59e0b] border-[#f59e0b]/30'
         };
+      case 'iraya':
+        return {
+          icon: <ShoppingBag className="w-5 h-5 text-[#10b981]" />,
+          glow: 'shadow-[0_0_25px_rgba(16,185,129,0.35)]',
+          border: 'group-hover:border-[#10b981]/50',
+          accent: '#10b981',
+          badgeBg: 'bg-[#10b981]/15 text-[#10b981] border-[#10b981]/30'
+        };
       default:
         return {
           icon: <Layers className="w-5 h-5 text-[#ff6b4a]" />,
@@ -81,6 +90,8 @@ export const AppCard: React.FC<AppCardProps> = ({ app, index }) => {
         ? 'pet'
         : app.slug === 'temple-app'
         ? 'temple'
+        : app.slug === 'iraya'
+        ? 'iraya'
         : 'click'
     );
     const sectionElement = document.getElementById(`section-${app.slug}`);

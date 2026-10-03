@@ -8,6 +8,7 @@ import {
   Wrench,
   HeartPulse,
   Building2,
+  ShoppingBag,
   Layers,
   ArrowUpRight,
   Sparkles
@@ -31,6 +32,8 @@ export const EcosystemCenterpiece: React.FC = () => {
         return <HeartPulse className="w-5 h-5 text-[#14b8a6]" />;
       case 'temple-app':
         return <Building2 className="w-5 h-5 text-[#f59e0b]" />;
+      case 'iraya':
+        return <ShoppingBag className="w-5 h-5 text-[#10b981]" />;
       default:
         return <Layers className="w-5 h-5 text-[#ff6b4a]" />;
     }
@@ -46,6 +49,8 @@ export const EcosystemCenterpiece: React.FC = () => {
         return 'border-[#14b8a6]/60 shadow-[0_0_25px_rgba(20,184,166,0.35)]';
       case 'temple-app':
         return 'border-[#f59e0b]/60 shadow-[0_0_25px_rgba(245,158,11,0.35)]';
+      case 'iraya':
+        return 'border-[#10b981]/60 shadow-[0_0_25px_rgba(16,185,129,0.35)]';
       default:
         return 'border-white/40 shadow-[0_0_20px_rgba(255,255,255,0.2)]';
     }
@@ -61,6 +66,8 @@ export const EcosystemCenterpiece: React.FC = () => {
         ? 'pet'
         : app.slug === 'temple-app'
         ? 'temple'
+        : app.slug === 'iraya'
+        ? 'iraya'
         : 'click'
     );
     const sectionElement = document.getElementById(`section-${app.slug}`);
@@ -92,6 +99,8 @@ export const EcosystemCenterpiece: React.FC = () => {
                 ? 'rgba(6, 182, 212, 0.2)'
                 : hoveredApp.slug === 'pet-app'
                 ? 'rgba(20, 184, 166, 0.2)'
+                : hoveredApp.slug === 'iraya'
+                ? 'rgba(16, 185, 129, 0.2)'
                 : 'rgba(245, 158, 11, 0.2)'
               : 'rgba(255, 107, 74, 0.08)',
           }}
@@ -116,6 +125,8 @@ export const EcosystemCenterpiece: React.FC = () => {
               ? '#06b6d4'
               : app.slug === 'pet-app'
               ? '#14b8a6'
+              : app.slug === 'iraya'
+              ? '#10b981'
               : '#f59e0b';
 
           return (

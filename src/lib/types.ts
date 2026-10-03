@@ -34,7 +34,7 @@ export interface OdiaApp {
   description: string;
   longDescription: string;
   logoBadge: string;
-  heroVisualType: '3d-phone-atma' | '3d-gears-mahalaxmi' | '3d-pets-paw' | '3d-temple-shikhara' | 'generic-card';
+  heroVisualType: '3d-phone-atma' | '3d-gears-mahalaxmi' | '3d-pets-paw' | '3d-temple-shikhara' | '3d-iraya-craft' | 'generic-card';
   accentColor: string;
   secondaryColor: string;
   glowColor: string;

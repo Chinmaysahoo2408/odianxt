@@ -40,7 +40,7 @@ export const ContactSection: React.FC = () => {
               </h2>
 
               <p className="mt-6 text-sm sm:text-base text-white/90 leading-relaxed font-medium">
-                Whether you want to partner with the ATMA mobility network, integrate genuine auto spares into Mahalaxmi, or support stray rescue & temple digitization — we’d love to collaborate.
+                Whether you want to partner with the ATMA mobility network, integrate genuine auto spares into Mahalaxmi, explore IRAYA luxury crafts, or support stray rescue & temple digitization — we’d love to collaborate.
               </p>
             </div>
 
@@ -143,6 +143,7 @@ export const ContactSection: React.FC = () => {
                   >
                     <option value="ATMA Mobility" className="bg-[#111114]">ATMA — Urban Mobility & Route Intelligence</option>
                     <option value="MAHALAXMI Spares" className="bg-[#111114]">MAHALAXMI — Genuine Spares & Fitment</option>
+                    <option value="IRAYA Luxury Crafts" className="bg-[#111114]">IRAYA — Handcrafted Luxury Bags & Footwear</option>
                     <option value="PET APP Welfare" className="bg-[#111114]">PET APP — Companion Animal Welfare & SOS</option>
                     <option value="TEMPLE APP Heritage" className="bg-[#111114]">TEMPLE APP — Sacred Heritage & Darshan</option>
                     <option value="OdiaNXT Core" className="bg-[#111114]">OdiaNXT Core Studio Partnership</option>

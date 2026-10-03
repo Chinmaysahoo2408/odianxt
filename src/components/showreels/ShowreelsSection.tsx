@@ -66,6 +66,22 @@ const showreelsData: Showreel[] = [
       { label: 'Audio Quality', value: 'Lossless 24-bit' },
     ],
   },
+  {
+    id: 'iraya-reel',
+    title: 'IRAYA — Handcrafted Luxury Bags & Footwear',
+    category: 'Luxury Crafts & E-Commerce',
+    duration: '01:50',
+    aspect: '16:9 Ultra HD',
+    thumbnailGradient: 'from-[#10b981]/30 via-[#18181c] to-[#09090b]',
+    tagline: 'Artisanal vegan leathers, precision saddle stitching & modern luxury footwear made in India.',
+    description: 'An intimate craftsmanship documentary showcasing the master artisans behind IRAYA, forging timeless bags and ergonomic footwear with intentional design.',
+    accent: '#10b981',
+    stats: [
+      { label: 'Artisan Crafted', value: '100% Hand Made' },
+      { label: 'Store Status', value: 'Live on Vercel' },
+      { label: 'Design Standard', value: 'Luxury Edition' },
+    ],
+  },
 ];
 
 export const ShowreelsSection: React.FC = () => {

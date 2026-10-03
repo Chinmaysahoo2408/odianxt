@@ -45,11 +45,11 @@ export const EcosystemShowcase: React.FC = () => {
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white">
               One Unified Studio.{' '}
               <span className="text-[#ff6b4a] italic font-black">
-                {apps.length === 4 ? 'Four' : apps.length} Flagships.
+                {apps.length === 5 ? 'Five' : apps.length === 4 ? 'Four' : apps.length} Flagships.
               </span>
             </h2>
             <p className="mt-3 text-base sm:text-lg text-stone-400 max-w-xl font-normal">
-              High-throughput digital applications engineered with studio precision, connecting mobility, industrial commerce, stray welfare, and temple heritage.
+              High-throughput digital applications engineered with studio precision, connecting mobility, industrial commerce, luxury crafts & fashion, stray welfare, and temple heritage.
             </p>
           </div>
 

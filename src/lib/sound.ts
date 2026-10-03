@@ -208,6 +208,29 @@ class SoundEngine {
     } catch {}
   }
 
+  // IRAYA - Elegant silk and emerald shimmer chime
+  public playIraya() {
+    if (this.isMuted) return;
+    try {
+      this.initCtx();
+      if (!this.ctx) return;
+      const notes = [523.25, 659.25, 783.99, 1046.5]; // C5, E5, G5, C6 luxury chord
+      notes.forEach((f, idx) => {
+        if (!this.ctx) return;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(f, this.ctx.currentTime + idx * 0.04);
+        gain.gain.setValueAtTime(0.04, this.ctx.currentTime + idx * 0.04);
+        gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + idx * 0.04 + 0.35);
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+        osc.start(this.ctx.currentTime + idx * 0.04);
+        osc.stop(this.ctx.currentTime + idx * 0.04 + 0.35);
+      });
+    } catch {}
+  }
+
   // Cosmic Ecosystem warp chord
   public playEcosystemPulse() {
     if (this.isMuted) return;

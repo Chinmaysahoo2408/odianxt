@@ -9,6 +9,7 @@ import { AtmaSection } from '@/components/apps/AtmaSection';
 import { MahalaxmiSection } from '@/components/apps/MahalaxmiSection';
 import { PetAppSection } from '@/components/apps/PetAppSection';
 import { TempleAppSection } from '@/components/apps/TempleAppSection';
+import { IrayaSection } from '@/components/apps/IrayaSection';
 import { ProcessSection } from '@/components/process/ProcessSection';
 import { InteractiveOdishaMap } from '@/components/map/InteractiveOdishaMap';
 import { LiveDashboard } from '@/components/dashboard/LiveDashboard';
@@ -43,6 +44,9 @@ export default function Home() {
 
       {/* Dedicated Immersive Section: TEMPLE APP (Sacred Kalinga Heritage & Darshan Guide) */}
       <TempleAppSection />
+
+      {/* Dedicated Immersive Section: IRAYA (Handcrafted Luxury Bags & Footwear Atelier) */}
+      <IrayaSection />
 
       {/* HuesPost Signature 4-Step Process Section with Huge Numbers */}
       <ProcessSection />

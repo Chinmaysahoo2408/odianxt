@@ -20,7 +20,7 @@ interface EcosystemContextType {
   // Actions
   setSoundMuted: (muted: boolean) => void;
   toggleSound: () => void;
-  playSound: (type: 'click' | 'hover' | 'atma' | 'mahalaxmi' | 'pet' | 'temple' | 'ecosystem') => void;
+  playSound: (type: 'click' | 'hover' | 'atma' | 'mahalaxmi' | 'pet' | 'temple' | 'iraya' | 'ecosystem') => void;
   setActiveAppModal: (app: OdiaApp | null) => void;
   setActiveLocation: (loc: LocationNode | null) => void;
   setSelectedCategory: (cat: string) => void;
@@ -44,10 +44,10 @@ interface EcosystemContextType {
 const EcosystemContext = createContext<EcosystemContextType | null>(null);
 
 const STORAGE_KEYS = {
-  APPS: 'odianxt_apps_v2',
-  LOCATIONS: 'odianxt_locations_v2',
-  METRICS: 'odianxt_metrics_v2',
-  SOUND: 'odianxt_sound_muted_v2'
+  APPS: 'odianxt_apps_v3',
+  LOCATIONS: 'odianxt_locations_v3',
+  METRICS: 'odianxt_metrics_v3',
+  SOUND: 'odianxt_sound_muted_v3'
 };
 
 export const EcosystemProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -67,7 +67,14 @@ export const EcosystemProvider: React.FC<{ children: React.ReactNode }> = ({ chi
   useEffect(() => {
     try {
       const savedApps = localStorage.getItem(STORAGE_KEYS.APPS);
-      if (savedApps) setApps(JSON.parse(savedApps));
+      if (savedApps) {
+        const parsed: OdiaApp[] = JSON.parse(savedApps);
+        const existingIds = new Set(parsed.map(a => a.id));
+        const missingDefaults = INITIAL_APPS.filter(a => !existingIds.has(a.id));
+        setApps([...parsed, ...missingDefaults]);
+      } else {
+        setApps(INITIAL_APPS);
+      }
 
       const savedLocs = localStorage.getItem(STORAGE_KEYS.LOCATIONS);
       if (savedLocs) setLocations(JSON.parse(savedLocs));
@@ -123,7 +130,7 @@ export const EcosystemProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     setSoundMuted(nextState);
   };
 
-  const playSound = (type: 'click' | 'hover' | 'atma' | 'mahalaxmi' | 'pet' | 'temple' | 'ecosystem') => {
+  const playSound = (type: 'click' | 'hover' | 'atma' | 'mahalaxmi' | 'pet' | 'temple' | 'iraya' | 'ecosystem') => {
     switch (type) {
       case 'click':
         sound.playClick();
@@ -142,6 +149,9 @@ export const EcosystemProvider: React.FC<{ children: React.ReactNode }> = ({ chi
         break;
       case 'temple':
         sound.playTemple();
+        break;
+      case 'iraya':
+        sound.playIraya();
         break;
       case 'ecosystem':
         sound.playEcosystemPulse();
